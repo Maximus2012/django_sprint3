@@ -56,4 +56,8 @@ python3 manage.py runserver
 ```
 
 ## Review
-https://github.com/user-attachments/assets/09b7866a-7333-425a-b9c1-3c1eced6c757
+
+
+https://github.com/user-attachments/assets/858318e2-610e-436e-a01b-a5edfa66b1d8
+
+
