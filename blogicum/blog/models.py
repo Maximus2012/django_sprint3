@@ -23,7 +23,8 @@ class BaseModel(models.Model):
 
 
 class Location(BaseModel):
-    name = models.CharField(max_length=256, blank=True, verbose_name="Название места")
+    name = models.CharField(max_length=256, blank=True,
+                            verbose_name="Название места")
 
     class Meta:
         verbose_name = "местоположение"
@@ -32,13 +33,15 @@ class Location(BaseModel):
 
 class Category(BaseModel):
 
-    title = models.CharField(max_length=256, blank=True, verbose_name="Заголовок")
+    title = models.CharField(max_length=256, blank=True,
+                             verbose_name="Заголовок")
     description = models.TextField(blank=True, verbose_name="Описание")
     slug = models.SlugField(
         unique=True,
         blank=True,
         verbose_name="Идентификатор",
-        help_text="Идентификатор страницы для URL; разрешены символы латиницы, цифры, дефис и подчёркивание.",
+        help_text="Идентификатор страницы для URL;" +
+        "разрешены символы латиницы, цифры, дефис и подчёркивание.",
     )
 
     class Meta:
@@ -47,15 +50,18 @@ class Category(BaseModel):
 
 
 class Post(BaseModel):
-    title = models.CharField(max_length=256, blank=True, verbose_name="Заголовок")
+    title = models.CharField(max_length=256, blank=True,
+                             verbose_name="Заголовок")
     text = models.TextField(blank=True, verbose_name="Текст")
     pub_date = models.DateTimeField(
         blank=True,
         verbose_name="Дата и время публикации",
-        help_text="Если установить дату и время в будущем — можно делать отложенные публикации.",
+        help_text="Если установить дату и время в будущем" + 
+        "— можно делать отложенные публикации.",
     )
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, blank=True, verbose_name="Автор публикации"
+        User, on_delete=models.CASCADE, blank=True,
+        verbose_name="Автор публикации"
     )
     location = models.ForeignKey(
         Location,
