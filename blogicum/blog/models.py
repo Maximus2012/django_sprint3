@@ -40,9 +40,8 @@ class Category(BaseModel):
         unique=True,
         blank=True,
         verbose_name="Идентификатор",
-        help_text="Идентификатор страницы для URL; разрешены символы латиницы, цифры, дефис и подчёркивание." # noqa: E501
+        help_text="Идентификатор страницы для URL; разрешены символы латиницы, цифры, дефис и подчёркивание."  # noqa: E501
     )
-
 
     class Meta:
         verbose_name = "категория"
@@ -56,7 +55,7 @@ class Post(BaseModel):
     pub_date = models.DateTimeField(
         blank=True,
         verbose_name="Дата и время публикации",
-        help_text="Если установить дату и время в будущем — можно делать отложенные публикации.", # noqa: E501
+        help_text="Если установить дату и время в будущем — можно делать отложенные публикации.",  # noqa: E501
     )
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, blank=True,
@@ -76,7 +75,6 @@ class Post(BaseModel):
         null=True,
         verbose_name="Категория",
     )
-
 
     class Meta:
         verbose_name = "публикация"
