@@ -23,7 +23,8 @@ def post_detail(request, post_id):
 def category_posts(request, category_slug):
     template = "blog/category.html"
     category_object = get_object_or_404(
-        Category, slug=category_slug, is_published=True, created_at__lte=timezone.now()
+        Category, slug=category_slug,
+        is_published=True, created_at__lte=timezone.now()
     )
 
     context = {
