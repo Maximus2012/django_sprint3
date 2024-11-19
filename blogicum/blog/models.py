@@ -43,6 +43,7 @@ class Category(BaseModel):
         help_text="Идентификатор страницы для URL; разрешены символы латиницы, цифры, дефис и подчёркивание." # noqa: E501
     )
 
+
     class Meta:
         verbose_name = "категория"
         verbose_name_plural = "Категории"
@@ -75,6 +76,7 @@ class Post(BaseModel):
         null=True,
         verbose_name="Категория",
     )
+
 
     class Meta:
         verbose_name = "публикация"
